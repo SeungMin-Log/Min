@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>CRUD</title>
+    <title>CRUD Page</title>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
@@ -34,6 +34,10 @@
     </script>
 </head>
 <body>
-    <h1>TEST</h1>
+    <h1>CRUD Page</h1>
+    <form action="/logout" method="post">
+        <input hidden="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+        <button type="submit">LogOut</button>
+    </form>
 </body>
 </html>
