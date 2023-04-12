@@ -13,6 +13,14 @@
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
     </context:component-scan>
 
+    <!-- AJAX 설정 -->
+    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+        <property name="order" value="0"/>
+    </bean>
+    <bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+        <property name="contentType" value="application/json;charset=UTF-8"> </property>
+    </bean>
+
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
         <property name="webBindingInitializer">
             <bean class="egovframework.example.cmmn.web.EgovBindingInitializer"/>
@@ -30,14 +38,6 @@
                 </bean>
             </list>
         </property>
-    </bean>
-
-    <!-- AJAX 설정 -->
-    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
-        <property name="order" value="0"/>
-    </bean>
-    <bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
-        <property name="contentType" value="application/json;charset=UTF-8"> </property>
     </bean>
 
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">

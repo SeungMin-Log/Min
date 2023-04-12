@@ -17,7 +17,7 @@
 	<!-- Jasypt 관련 설정과 HashKey -->
 	<bean id="configurationEncryptor" class="org.jasypt.encryption.pbe.StandardPBEStringEncryptor">
 		<property name="config" ref="environmentVariablesConfiguration" />
-		<!-- 복호화 키 숨기는 방법 찾아야함 -->
+		<!-- 복호화 키 -->
 		<property name="password" value="hashKey"/>
 	</bean>
 
