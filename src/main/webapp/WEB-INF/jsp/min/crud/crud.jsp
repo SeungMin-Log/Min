@@ -20,20 +20,20 @@
         /* AJAX 호출 */
         function ajaxCall(){
             $.ajax({
-                url: "/crudGet.do",
+                url: "/crudGetData.do",
                 type: "GET",
                 dataType : "json",
                 success: function(result){
                     console.log(result);
                 },
-                error: function(error) {
-                    console.log(error);
+                error : function(xhr, status, error) {
+                    console.log(status, error);
                 }
             });
         }
     </script>
 </head>
 <body>
-
+    <h1>TEST</h1>
 </body>
 </html>

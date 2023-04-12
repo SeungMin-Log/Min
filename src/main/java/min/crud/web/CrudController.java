@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class CrudController {
@@ -20,21 +22,13 @@ public class CrudController {
         return mav;
     }
 
-    @GetMapping(value = "/crudGet.do")
-    public ModelAndView crudGet(){
-        ModelAndView mav = new ModelAndView("mav");
+    @RequestMapping(value = "/crudGetData.do")
+    @ResponseBody
+    public Map<String, Object> crudGetData() {
+        Map<String, Object> result = new HashMap<String, Object>();
         int count = service.count();
-        return mav;
+        result.put("result", count);
+        return result;
     }
-
-/*
-    @GetMapping
-
-    @PostMapping
-
-    @PutMapping
-
-    @DeleteMapping
-*/
 
 }
