@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="min.security.service.impl.UserMapper">
+
+    <select id="getUserAccount" resultType="min.security.vo.UserVo">
+        SELECT
+            USER_NO AS userNo,
+            USER_ID AS username,
+            USER_PW AS password,
+            USER_NAME AS userRealName,
+            USER_AUTH AS userAuth
+        FROM TB_USER
+        WHERE USER_ID = #{s}
+    </select>
+</mapper>
