@@ -1,5 +1,5 @@
 # Min
- Min Side Project
-  -EgovFrameWork 3.8.0\n
-  -Open JDK 1.8\n
+ Min Side Project<br>
+  -EgovFrameWork 3.8.0<br>
+  -Open JDK 1.8<br>
   -MariaDB
