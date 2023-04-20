@@ -21,7 +21,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         UserVo userVo = userMapper.getUserAccount(s);
         /* 만약 해당아이디의 계정정보가 없으면 실행한다 */
         if (userVo == null){
-            System.out.println("존재하지 않는 계정입니다");
+            throw new UsernameNotFoundException("존재하지 않는 계정입니다");
         }
         return userVo;
     }

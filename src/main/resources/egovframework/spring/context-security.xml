@@ -17,8 +17,6 @@
 		<intercept-url pattern="/**" access="hasRole('ROLE_ADMIN')" />
 
 		<form-login
-			username-parameter="username"
-			password-parameter="password"
 			login-page="/loginPage.do"
 			login-processing-url="/login"
 			authentication-failure-handler-ref="loginFailHandler"
@@ -42,6 +40,7 @@
 		</authentication-provider>
 	</authentication-manager>-->
 
+	<!-- CustomUserDetailService를 통해 가져온 계정정보를 토대로 authentication-manager 객체가 로그인과정을 수행한다 -->
 	<authentication-manager>
 		<authentication-provider user-service-ref="customUserDetailsService" />
 	</authentication-manager>

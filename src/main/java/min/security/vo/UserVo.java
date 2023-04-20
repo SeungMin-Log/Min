@@ -10,11 +10,11 @@ import java.util.Collections;
 
 @Data
 public class UserVo implements UserDetails {
-    private int userNo;
-    private String username;
-    private String password;
-    private String userRealName;
-    private String userAuth;
+    private int userNo; /* 사용자 번호 */
+    private String username; /* 사용자 아이디 */
+    private String password; /* 사용자 비밀번호 */
+    private String userRealName; /* 사용자 이름 */
+    private String userAuth; /* 사용자 권한 */
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
